@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Choose wisely 😌</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff4f7;color:#24171b}
+  .card{width:min(90%,420px);background:white;border-radius:24px;padding:32px;box-shadow:0 15px 45px #0001;text-align:center}
+  h1{margin:0 0 10px;font-size:28px}.sub{color:#806c72;margin-bottom:28px}
+  .option{display:block;text-decoration:none;color:white;border:0;width:100%;padding:16px;margin:14px 0;
+  border-radius:14px;font-size:17px;font-weight:700;cursor:pointer}
+  .one{background:#e85d75}.two{background:#34252a}
+  .caption{display:block;font-size:13px;font-weight:500;opacity:.85;margin-top:5px}
+  #result{display:none;margin-top:24px;font-size:19px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Okay madam… choose 👀</h1>
+  <div class="sub">You only have two options.</div>
+  <button class="option one" onclick="choose(1)">Click here Dami
+    <span class="caption">Go to bed madam.</span>
+  </button>
+  <button class="option two" onclick="choose(2)">Click to see if I’ll do it
+    <span class="caption">Don’t tell me what to do.</span>
+  </button>
+  <div id="result"></div>
+</div>
+<script>
+function choose(n){
+ const r=document.getElementById('result');
+ r.style.display='block';
+ r.textContent=n===1 ? 'Good girl. Now go to bed, madam 😌😂' : 'Ohhh, so we’re choosing violence? 😂';
+}
+</script>
+</body>
+</html>
