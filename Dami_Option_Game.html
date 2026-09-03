@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dami's Decision 😌</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0; min-height:100vh; overflow:hidden;
+ display:flex; align-items:center; justify-content:center;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ background:linear-gradient(135deg,#ffe5ec,#f7e7ff);
+ color:#25171c;
+}
+.card{
+ width:min(92vw,430px); padding:32px 22px; text-align:center;
+ background:rgba(255,255,255,.9); border-radius:28px;
+ box-shadow:0 18px 60px rgba(70,30,50,.15);
+}
+h1{font-size:28px;margin:0 0 8px}
+p{color:#765f68;margin:0 0 28px}
+.buttons{position:relative;height:170px}
+button{
+ position:absolute; width:90%; left:5%; padding:17px;
+ border:0;border-radius:16px;color:white;font-size:18px;font-weight:800;
+ box-shadow:0 8px 20px rgba(0,0,0,.12); transition:.25s;
+}
+#a{top:5px;background:#ed5b78}
+#b{top:90px;background:#30262a}
+#message{display:none}
+.big{font-size:52px}
+.final h1{font-size:34px}
+.final p{font-size:20px;color:#4d3940}
+</style>
+</head>
+<body>
+<div class="card" id="game">
+ <h1>Dami, choose wisely 👀</h1>
+ <p>One of these is clearly the correct answer.</p>
+ <div class="buttons">
+  <button id="a">OPTION A 😌</button>
+  <button id="b">OPTION B 👀</button>
+ </div>
+ <small>Tap one… if you dare 😂</small>
+</div>
+
+<script>
+const a=document.getElementById('a'), b=document.getElementById('b');
+let tries=0;
+
+function move(btn){
+ tries++;
+ const x=Math.floor(Math.random()*35)-17;
+ const y=Math.floor(Math.random()*45)-22;
+ btn.style.transform=`translate(${x}vw,${y}px) rotate(${Math.random()*10-5}deg)`;
+ if(tries>=3){
+   setTimeout(finalPage,250);
+ }
+}
+a.onclick=()=>move(a);
+b.onclick=()=>move(b);
+
+function finalPage(){
+ document.body.innerHTML=`
+ <div class="card final">
+   <div class="big">🌙😴</div>
+   <h1>Decision made.</h1>
+   <p><strong>GO TO BED MADAM.</strong></p>
+   <p>Thank you for playing 😂❤️</p>
+ </div>`;
+}
+</script>
+</body>
+</html>
